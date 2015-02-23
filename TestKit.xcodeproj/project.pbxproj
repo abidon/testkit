@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C100F659199F7C01008BB053 /* TestKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F658199F7C01008BB053 /* TestKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F676199F7DC2008BB053 /* TKTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F675199F7DC2008BB053 /* TKTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F679199F8030008BB053 /* TKTestSuite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C100F677199F8030008BB053 /* TKTestSuite.cpp */; };
+		C100F67A199F8030008BB053 /* TKTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F678199F8030008BB053 /* TKTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F67C199F82C6008BB053 /* TKTest.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F67B199F82C6008BB053 /* TKTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F67F199FA4B6008BB053 /* TKMechanisms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C100F67D199FA4B6008BB053 /* TKMechanisms.cpp */; };
+		C100F680199FA4B6008BB053 /* TKMechanisms.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F67E199FA4B6008BB053 /* TKMechanisms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F691199FA8D1008BB053 /* TKTestRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C100F68F199FA8D1008BB053 /* TKTestRunner.cpp */; };
+		C100F692199FA8D1008BB053 /* TKTestRunner.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F690199FA8D1008BB053 /* TKTestRunner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C100F695199FAE80008BB053 /* TKTestResults.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C100F693199FAE80008BB053 /* TKTestResults.cpp */; };
+		C100F696199FAE80008BB053 /* TKTestResults.h in Headers */ = {isa = PBXBuildFile; fileRef = C100F694199FAE80008BB053 /* TKTestResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1365BF419B8D232002B369F /* TKVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = C1365BF319B8D232002B369F /* TKVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C137C773199FDB490007D93B /* TKTextWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C137C771199FDB490007D93B /* TKTextWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C137C775199FDB820007D93B /* TKWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C137C774199FDB820007D93B /* TKWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C137C776199FDD690007D93B /* TKTextWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C137C770199FDB490007D93B /* TKTextWriter.cpp */; };
+		C137C779199FE8FB0007D93B /* TKJUnitWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C137C777199FE8FB0007D93B /* TKJUnitWriter.cpp */; };
+		C137C77A199FE8FB0007D93B /* TKJUnitWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C137C778199FE8FB0007D93B /* TKJUnitWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1BA960619B7B1B200CE2A10 /* TKHtmlWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1BA960419B7B1B200CE2A10 /* TKHtmlWriter.cpp */; };
+		C1BA960719B7B1B200CE2A10 /* TKHtmlWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C1BA960519B7B1B200CE2A10 /* TKHtmlWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C100F654199F7C01008BB053 /* TestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C100F658199F7C01008BB053 /* TestKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestKit.h; sourceTree = "<group>"; };
+		C100F675199F7DC2008BB053 /* TKTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTypes.h; sourceTree = "<group>"; };
+		C100F677199F8030008BB053 /* TKTestSuite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKTestSuite.cpp; sourceTree = "<group>"; };
+		C100F678199F8030008BB053 /* TKTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTestSuite.h; sourceTree = "<group>"; };
+		C100F67B199F82C6008BB053 /* TKTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTest.h; sourceTree = "<group>"; };
+		C100F67D199FA4B6008BB053 /* TKMechanisms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKMechanisms.cpp; sourceTree = "<group>"; };
+		C100F67E199FA4B6008BB053 /* TKMechanisms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMechanisms.h; sourceTree = "<group>"; };
+		C100F68F199FA8D1008BB053 /* TKTestRunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKTestRunner.cpp; sourceTree = "<group>"; };
+		C100F690199FA8D1008BB053 /* TKTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTestRunner.h; sourceTree = "<group>"; };
+		C100F693199FAE80008BB053 /* TKTestResults.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKTestResults.cpp; sourceTree = "<group>"; };
+		C100F694199FAE80008BB053 /* TKTestResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTestResults.h; sourceTree = "<group>"; };
+		C100F69B199FD800008BB053 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TestKit/Info.plist; sourceTree = SOURCE_ROOT; };
+		C1365BF319B8D232002B369F /* TKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVersion.h; sourceTree = "<group>"; };
+		C137C770199FDB490007D93B /* TKTextWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKTextWriter.cpp; sourceTree = "<group>"; };
+		C137C771199FDB490007D93B /* TKTextWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTextWriter.h; sourceTree = "<group>"; };
+		C137C774199FDB820007D93B /* TKWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWriter.h; sourceTree = "<group>"; };
+		C137C777199FE8FB0007D93B /* TKJUnitWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKJUnitWriter.cpp; sourceTree = "<group>"; };
+		C137C778199FE8FB0007D93B /* TKJUnitWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKJUnitWriter.h; sourceTree = "<group>"; };
+		C1BA960419B7B1B200CE2A10 /* TKHtmlWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TKHtmlWriter.cpp; sourceTree = "<group>"; };
+		C1BA960519B7B1B200CE2A10 /* TKHtmlWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHtmlWriter.h; sourceTree = "<group>"; };
+		C1BA960E19B7C28A00CE2A10 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C100F650199F7C01008BB053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C100F655199F7C01008BB053 /* TestKit */ = {
+			isa = PBXGroup;
+			children = (
+				C100F658199F7C01008BB053 /* TestKit.h */,
+				C1BA960419B7B1B200CE2A10 /* TKHtmlWriter.cpp */,
+				C1BA960519B7B1B200CE2A10 /* TKHtmlWriter.h */,
+				C137C777199FE8FB0007D93B /* TKJUnitWriter.cpp */,
+				C137C778199FE8FB0007D93B /* TKJUnitWriter.h */,
+				C100F67D199FA4B6008BB053 /* TKMechanisms.cpp */,
+				C100F67E199FA4B6008BB053 /* TKMechanisms.h */,
+				C100F67B199F82C6008BB053 /* TKTest.h */,
+				C100F693199FAE80008BB053 /* TKTestResults.cpp */,
+				C100F694199FAE80008BB053 /* TKTestResults.h */,
+				C100F68F199FA8D1008BB053 /* TKTestRunner.cpp */,
+				C100F690199FA8D1008BB053 /* TKTestRunner.h */,
+				C100F677199F8030008BB053 /* TKTestSuite.cpp */,
+				C100F678199F8030008BB053 /* TKTestSuite.h */,
+				C137C770199FDB490007D93B /* TKTextWriter.cpp */,
+				C137C771199FDB490007D93B /* TKTextWriter.h */,
+				C100F675199F7DC2008BB053 /* TKTypes.h */,
+				C1365BF319B8D232002B369F /* TKVersion.h */,
+				C137C774199FDB820007D93B /* TKWriter.h */,
+			);
+			path = TestKit;
+			sourceTree = "<group>";
+		};
+		C100F66B199F7C4E008BB053 /* TestKit */ = {
+			isa = PBXGroup;
+			children = (
+				C100F69B199FD800008BB053 /* Info.plist */,
+			);
+			name = TestKit;
+			sourceTree = "<group>";
+		};
+		C170ADAC19918B91001DCEDC = {
+			isa = PBXGroup;
+			children = (
+				C100F655199F7C01008BB053 /* TestKit */,
+				C170ADB919918B91001DCEDC /* Supporting Files */,
+				C1BA960D19B7C28A00CE2A10 /* a */,
+				C170ADB719918B91001DCEDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C170ADB719918B91001DCEDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C100F654199F7C01008BB053 /* TestKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C170ADB919918B91001DCEDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C100F66B199F7C4E008BB053 /* TestKit */,
+			);
+			name = "Supporting Files";
+			path = BaseKit;
+			sourceTree = "<group>";
+		};
+		C1BA960D19B7C28A00CE2A10 /* a */ = {
+			isa = PBXGroup;
+			children = (
+				C1BA960E19B7C28A00CE2A10 /* main.cpp */,
+			);
+			path = a;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C100F651199F7C01008BB053 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C100F659199F7C01008BB053 /* TestKit.h in Headers */,
+				C100F692199FA8D1008BB053 /* TKTestRunner.h in Headers */,
+				C137C773199FDB490007D93B /* TKTextWriter.h in Headers */,
+				C100F67C199F82C6008BB053 /* TKTest.h in Headers */,
+				C1BA960719B7B1B200CE2A10 /* TKHtmlWriter.h in Headers */,
+				C100F680199FA4B6008BB053 /* TKMechanisms.h in Headers */,
+				C1365BF419B8D232002B369F /* TKVersion.h in Headers */,
+				C137C775199FDB820007D93B /* TKWriter.h in Headers */,
+				C100F67A199F8030008BB053 /* TKTestSuite.h in Headers */,
+				C100F676199F7DC2008BB053 /* TKTypes.h in Headers */,
+				C100F696199FAE80008BB053 /* TKTestResults.h in Headers */,
+				C137C77A199FE8FB0007D93B /* TKJUnitWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C100F653199F7C01008BB053 /* TestKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C100F668199F7C01008BB053 /* Build configuration list for PBXNativeTarget "TestKit" */;
+			buildPhases = (
+				C100F651199F7C01008BB053 /* Headers */,
+				C100F64F199F7C01008BB053 /* Sources */,
+				C100F650199F7C01008BB053 /* Frameworks */,
+				C100F652199F7C01008BB053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestKit;
+			productName = TestKit;
+			productReference = C100F654199F7C01008BB053 /* TestKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C170ADAD19918B91001DCEDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Bolt Studio";
+				TargetAttributes = {
+					C100F653199F7C01008BB053 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
+			};
+			buildConfigurationList = C170ADB019918B91001DCEDC /* Build configuration list for PBXProject "TestKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C170ADAC19918B91001DCEDC;
+			productRefGroup = C170ADB719918B91001DCEDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C100F653199F7C01008BB053 /* TestKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C100F652199F7C01008BB053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C100F64F199F7C01008BB053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C137C779199FE8FB0007D93B /* TKJUnitWriter.cpp in Sources */,
+				C137C776199FDD690007D93B /* TKTextWriter.cpp in Sources */,
+				C100F691199FA8D1008BB053 /* TKTestRunner.cpp in Sources */,
+				C100F67F199FA4B6008BB053 /* TKMechanisms.cpp in Sources */,
+				C100F679199F8030008BB053 /* TKTestSuite.cpp in Sources */,
+				C1BA960619B7B1B200CE2A10 /* TKHtmlWriter.cpp in Sources */,
+				C100F695199FAE80008BB053 /* TKTestResults.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C100F664199F7C01008BB053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks";
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TestKit/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C100F665199F7C01008BB053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks";
+				FRAMEWORK_VERSION = A;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = TestKit/Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C170ADCA19918B92001DCEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=i386]" = "-Dbasekit_arch_size=32";
+				"OTHER_CFLAGS[arch=x86_64]" = "-Dbasekit_arch_size=64";
+				"OTHER_CPLUSPLUSFLAGS[arch=i386]" = "$(OTHER_CFLAGS)";
+				"OTHER_CPLUSPLUSFLAGS[arch=x86_64]" = "$(OTHER_CFLAGS)";
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C170ADCB19918B92001DCEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_CFLAGS[arch=i386]" = "-Dbasekit_arch_size=32";
+				"OTHER_CFLAGS[arch=x86_64]" = "-Dbasekit_arch_size=64";
+				"OTHER_CPLUSPLUSFLAGS[arch=i386]" = "$(OTHER_CFLAGS)";
+				"OTHER_CPLUSPLUSFLAGS[arch=x86_64]" = "$(OTHER_CFLAGS)";
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C100F668199F7C01008BB053 /* Build configuration list for PBXNativeTarget "TestKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C100F664199F7C01008BB053 /* Debug */,
+				C100F665199F7C01008BB053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C170ADB019918B91001DCEDC /* Build configuration list for PBXProject "TestKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C170ADCA19918B92001DCEDC /* Debug */,
+				C170ADCB19918B92001DCEDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C170ADAD19918B91001DCEDC /* Project object */;
+}
