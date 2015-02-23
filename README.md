@@ -21,7 +21,7 @@ TestKit goal is to provide an easy to use interface, but it doesn't mean that it
 
 First, take a look at the typical `main()` function structure:
 
-```
+```c++
 #include <fstream>
 #include <iostream>
 #include <TestKit/TestKit.h>
@@ -67,19 +67,21 @@ int main(int argc, const char** argv)
 			— my_first_test_suite::test_one: Assertion failed at my_first_test_suite.h:20: { true == false }
 
 5. You can also write the results in the JUnit format, in order to integrate your tests is a building factory like [Bamboo](https://www.atlassian.com/software/bamboo)
- 
-		<?xml version="1.0" encoding="UTF-8" ?>
-		<testsuites>
-			<testsuite failures="1" tests="2" errors="0" name="my_first_test_suite">
-				<testcase classname="bk::my_first_class" name="test_one" time="0">
-					<failure>Assertion failed at my_first_test_suite.h:20: { true == false }</failure>
-				</testcase>
-				<testcase classname="my_first_class" name="test_two" time="0.000001647"/>
-			</testsuite>
-			<testsuite failures="0" tests="1" errors="0" name="my_second_test_suite">
-				<testcase classname="my_second_class" name="the_test" time="0.000001214"/>
-			</testsuite>
-		</testsuites>
+
+	```xml
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<testsuites>
+		<testsuite failures="1" tests="2" errors="0" name="my_first_test_suite">
+			<testcase classname="bk::my_first_class" name="test_one" time="0">
+				<failure>Assertion failed at my_first_test_suite.h:20: { true == false }</failure>
+			</testcase>
+			<testcase classname="my_first_class" name="test_two" time="0.000001647"/>
+		</testsuite>
+		<testsuite failures="0" tests="1" errors="0" name="my_second_test_suite">
+			<testcase classname="my_second_class" name="the_test" time="0.000001214"/>
+		</testsuite>
+	</testsuites>
+	```
 
 Now you know how to run your test suites, we can take a look on how to write one
 
@@ -94,7 +96,7 @@ In TestKit, test suites are classes that must inherits the `tk::test_suite` inte
 The useful — not to say vital — method you will use to add the tests to the suite is `add_test`.  
 But we talked too much, let's take a look at our `my_first_test_suite` class:
 
-```
+```c++
 class my_first_test_suite :
 public tk::test_suite
 {
