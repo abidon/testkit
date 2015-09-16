@@ -4,7 +4,7 @@
  * Copyright (c) 2014 Aurelien Bidon
  */
 
-#include <TestKit/TKJunitWriter.h>
+#include <TestKit/TKJUnitWriter.h>
 #include <TestKit/TKTestResults.h>
 #include <time.h>
 

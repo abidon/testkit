@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <string.h>
 #include <time.h>
 
 /* HTML tag list:

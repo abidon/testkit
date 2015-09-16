@@ -5,7 +5,7 @@
  */
 
 #include <TestKit/TKHtmlWriter.h>
-#include <TestKit/TKJunitWriter.h>
+#include <TestKit/TKJUnitWriter.h>
 #include <TestKit/TKMechanisms.h>
 #include <TestKit/TKTestResults.h>
 #include <TestKit/TKTestRunner.h>
