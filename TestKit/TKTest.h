@@ -62,7 +62,7 @@ struct test_result
 	/*!
 	 @brief the test associated with the result
 	 */
-	test test;
+	struct test test;
 	
 	/*!
 	 @brief has the test passed
