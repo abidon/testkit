@@ -10,13 +10,13 @@
 #include <iostream>
 
 tk::test_runner::test_runner() :
-_results(new tk::test_results()),
-_suites()
+_suites(),
+_results(new tk::test_results())
 { }
 
 tk::test_runner::test_runner(test_runner&& mv) :
-_results(mv._results),
-_suites(mv._suites)
+_suites(mv._suites),
+_results(mv._results)
 {
 	mv._results = new tk::test_results();
 	mv._suites.clear();
@@ -70,7 +70,7 @@ tk::test_runner::run()
 			}
 			auto end_time = std::chrono::high_resolution_clock::now();
 			std::clog << ".";
-			_results->add_result((tk::test_result){test, true, std::chrono::nanoseconds(end_time-start_time)});
+			_results->add_result((tk::test_result){test, true, std::chrono::nanoseconds(end_time-start_time), ""});
 		}
 	}
 	std::clog << std::endl;

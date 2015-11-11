@@ -57,13 +57,13 @@ public:
 	/*!
 	 @brief the amount of tests which have failed
 	 */
-	const std::size_t
+    std::size_t
 	failures() const;
 	
 	/*!
 	 @brief the amount of tests which have failed for a specific suite
 	 */
-	const std::size_t
+    std::size_t
 	failures(const std::string& suite) const;
 	
 	/*!
@@ -75,13 +75,13 @@ public:
 	/*!
 	 @brief the amount of tests which have succeeded
 	 */
-	const std::size_t
+    std::size_t
 	successes() const;
 	
 	/*!
 	 @brief the amount of tests which have succeeded for a specific suite
 	 */
-	const std::size_t
+    std::size_t
 	successes(const std::string& suite) const;
 	
 	/*!
@@ -93,25 +93,25 @@ public:
 	/*!
 	 @brief the tests success rate in percent
 	 */
-	const float
+    float
 	success_rate() const;
 	
 	/*!
 	 @brief the tests success rate in percent for a specific suite
 	 */
-	const std::size_t
+    std::size_t
 	success_rate(const std::string& suite) const;
 	
 	/*!
 	 @brief the amount of tests
 	 */
-	const std::size_t
+    std::size_t
 	results() const;
 	
 	/*!
 	 @brief the amount of tests for a specific suite
 	 */
-	const std::size_t
+	std::size_t
 	results(const std::string& suite) const;
 	
 	/*!

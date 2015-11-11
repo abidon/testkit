@@ -53,13 +53,13 @@ tk::test_results::corrupted_suites() const
 	return suites;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::failures() const
 {
 	return results() - successes();
 }
 
-const std::size_t
+std::size_t
 tk::test_results::failures(const std::string& suite) const
 {
 	return results(suite) - successes(suite);
@@ -80,7 +80,7 @@ tk::test_results::failures_list() const
 	return l;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::successes() const
 {
 	std::size_t count = 0;
@@ -94,7 +94,7 @@ tk::test_results::successes() const
 	return count;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::successes(const std::string& suitename) const
 {
 	if (suitename == "") return successes();
@@ -129,7 +129,7 @@ tk::test_results::successes_list() const
 	return l;
 }
 
-const float
+float
 tk::test_results::success_rate() const
 {
 	const float s = successes();
@@ -139,7 +139,7 @@ tk::test_results::success_rate() const
 	return s/t * 100.f;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::success_rate(const std::string& suite) const
 {
 	const float s = successes(suite);
@@ -149,7 +149,7 @@ tk::test_results::success_rate(const std::string& suite) const
 	return s/t * 100.f;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::results() const
 {
 	std::size_t res = 0;
@@ -162,7 +162,7 @@ tk::test_results::results() const
 	return res;
 }
 
-const std::size_t
+std::size_t
 tk::test_results::results(const std::string& suite) const
 {
 	try {
