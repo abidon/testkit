@@ -32,7 +32,8 @@ struct test_fail : std::exception
 	what() const noexcept;
 };
 
-#define tk_test_assert(exp) tk::assert(exp, #exp, __FILE__, __LINE__)
+#define tk_assert(exp) tk::assert(exp, #exp, __FILE__, __LINE__)
+#define tk_test_assert(exp) tk::assert(exp, #exp, __FILE__, __LINE__) //! @deprecated
 #define tk_test_throw(exp, exc_t) {bool nt = false; try {exp;nt=true;}catch(exc_t){}catch(...){throw tk::test_fail(#exp, "have thrown something else than", #exc_t, __FILE__, __LINE__);} if(nt){throw tk::test_fail(#exp, "should have thrown", #exc_t, __FILE__, __LINE__);}}
 #define tk_test_no_throw(exp) try{exp;}catch(...){throw tk::test_fail(#exp, "shouldn't have thrown", __FILE__, __LINE__);}
 
