@@ -11,3 +11,5 @@ libstatic: $(TARGET)
 $(TARGET): $(CXXOBJS)
 	$(AR) rcs $@ $^
 
+clean:
+	$(RM) TestKit/*.o
