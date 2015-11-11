@@ -41,8 +41,8 @@ void
 assert(const bool exp, const char* code, const char* file, const std::size_t line);
 
 #define TK_ADD_TEST(t) add_test(#t, t)
-#define TK_DECL_TEST(t) static void t()
-#define TK_IMPL_TEST(s, t) void s::t()
+#define TK_DECLARE_TEST(t) static void t()
+#define TK_IMPLEMENT_TEST(s, t) void s::t()
 
 testkit_namespace_end
 
