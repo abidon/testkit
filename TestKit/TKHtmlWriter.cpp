@@ -7,6 +7,7 @@
 #include <TestKit/TKHtmlWriter.h>
 #include <TestKit/TKTestResults.h>
 
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
@@ -15,6 +16,9 @@
 
 /* HTML tag list:
  
+ charts_time_spent_dataset
+ charts_success_rate_dataset
+ charts_suites_name
  end_foreach_suite
  end_foreach_test
  foreach_suite
@@ -33,7 +37,7 @@ namespace priv {
 <!DOCTYPE html>\n\
 <!--\n\
 	This test report has been generated with TestKit v!!testkit_version\n\
-	For more information, visit http://developers.boltstud.io/testkit\n\
+	For more information, visit http://github.com/abidon/testkit\n\
 -->\n\
 <html>\n\
 <head>\n\
@@ -53,7 +57,12 @@ namespace priv {
 	\n\
 	<div class=\"container-fluid\">\n\
 		<div class=\"row\">\n\
-			<canvas id=\"chart\" width=\"100%\" height=\"100%\"></canvas>\n\
+			<div class=\"col-sm-6\">\n\
+                <canvas id=\"success_per_suite\" width=\"400\" height=\"400\"></canvas>\n\
+            </div>\n\
+            <div class=\"col-sm-6\">\n\
+                <canvas id=\"time_per_suite\" width=\"400\" height=\"400\"></canvas>\n\
+            </div>\n\
 		</div>\n\
 		<div class=\"row\">\n\
 			<div class=\"col-md-12\">\n\
@@ -79,8 +88,26 @@ namespace priv {
 			</div>\n\
 		</div>\n\
 	</div>\n\
+    <p style=\"color: #aaa; font-size: 10px; text-align: center;\">Report generated using <a href=\"http://github.com/abidon/testkit\">TestKit</a>, the C++ unit testing framework.</p>\n\
 	\n\
-	<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>\n\
+    <script src=\"http://www.chartjs.org/assets/Chart.js\"></script>\n\
+    <script>\n\
+        (function() {\n\
+            // Creating 'per suite success rate' chart\n\
+            var success_ctx = document.getElementById('success_per_suite').getContext('2d');\n\
+            new Chart(success_ctx).Bar({\n\
+                labels: [ !!charts_suites_name ],\n\
+                datasets: [ !!charts_success_rate_dataset ]\n\
+            });\n\
+            \n\
+            // Creating 'time spent per suite' chart\n\
+            var time_spent_ctx = document.getElementById('time_per_suite').getContext('2d');\n\
+            new Chart(time_spent_ctx).Line({\n\
+                labels: [ !!charts_suites_name ],\n\
+                datasets: [ !!charts_time_spent_dataset ]\n\
+            });\n\
+        })();\n\
+    </script>\n\
 </body>\n\
 </html>";
 }
@@ -120,11 +147,102 @@ _skeleton(priv::default_skeleton)
 void
 tk::html_writer::write(std::ostream &s) const
 {
+    srand(time(NULL));
+
 	std::string final_html(_skeleton);
 	std::string timestamp(util::timestamp());
 	
 	final_html = util::replace("!!results_completion_date", timestamp, final_html);
 	final_html = util::replace("!!testkit_version", version::literal, final_html);
+    final_html = util::replace("!!charts_suites_name", [](const tk::test_results& r) {
+        auto results = r.results_list();
+        std::string suites("");
+        for (auto it(results.begin()); it != results.end(); ++it)
+        {
+            suites += "\"" + it->first + "\"";
+
+            auto it_copy(it);
+            if (++it_copy != results.end())
+                suites += ", ";
+        }
+        return suites;
+    }(_r), final_html);
+
+    final_html = util::replace("!!charts_time_spent_dataset", [](const tk::test_results& r) {
+        auto results = r.results_list();
+        std::stringstream output;
+
+        std::array<std::vector<double>, 2> datasets_data;
+
+        for (auto it(results.begin()); it != results.end(); it++)
+        {
+            double sum = 0;
+            for (auto rit(it->second.begin()); rit != it->second.end(); ++rit)
+                sum += rit->ns.count() / 1000000.f;
+            datasets_data[0].push_back(sum);
+            datasets_data[1].push_back(sum / it->second.size());
+        }
+
+        for (uint64_t j(0); j < datasets_data.size(); ++j)
+        {
+            output << "{data: [";
+
+            for (uint64_t i(0); i < datasets_data[j].size(); ++i)
+                output << datasets_data[j][i] << (i < datasets_data[j].size()-1 ? "," : "");
+
+            output << "],";
+            uint8_t r = rand(), g = rand(), b = rand();
+            output << "fillColor: \"rgba(" << (int)r << "," << (int)g << "," << (int)b << ",0.25)\",";
+            output << "pointColor: \"rgba(" << (int)r << "," << (int)g << "," << (int)b << ",1)\",";
+            output << "strokeColor: \"rgba(" << (int)r << "," << (int)g << "," << (int)b << ",1)\"";
+
+            output << "}";
+
+            if (j < datasets_data.size()-1)
+                output << ",\n";
+        }
+
+        return output.str();
+    }(_r), final_html);
+
+    final_html = util::replace("!!charts_success_rate_dataset", [](const tk::test_results& r) {
+        auto results = r.results_list();
+        std::stringstream output;
+
+        std::array<std::vector<uint64_t>, 2> datasets_data;
+
+        for (auto suite_it(results.begin()); suite_it != results.end(); ++suite_it)
+        {
+            datasets_data[0].push_back(r.successes(suite_it->first));
+            datasets_data[1].push_back(r.results(suite_it->first) - r.successes(suite_it->first));
+        }
+
+
+
+        for (uint64_t j(0); j <= datasets_data.size(); ++j)
+        {
+            output << "{data: [";
+
+            for (uint64_t i(0); i < datasets_data[j > 0 ? j-1 : j].size(); ++i)
+                if (j == 0)
+                    output << (datasets_data[0][i] + datasets_data[1][i]) << (i < datasets_data[j].size()-1 ? "," : "");
+                else output << datasets_data[j-1][i] << (i < datasets_data[j-1].size()-1 ? "," : "");
+
+            output << "],";
+            
+            std::string color = j == 0 ? "30,40,188" : (j == 1 ? "0,188,0" : "188,0,0");
+            output << "fillColor: \"rgba(" + color + ",0.25)\",";
+            output << "pointColor: \"rgba(" + color + ",1)\",";
+            output << "strokeColor: \"rgba(" + color + ",1)\"";
+
+            output << "}";
+
+            if (j < datasets_data.size())
+                output << ",\n";
+        }
+
+        return output.str();
+    }(_r), final_html);
 	
 	// for each suite
 	std::size_t fes_beg = final_html.find("!!foreach_suite");
