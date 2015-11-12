@@ -87,45 +87,40 @@ Now you know how to run your test suites, we can take a look on how to write one
 
 ### 3.2 Writing a test suite
 
-In TestKit, test suites are classes that must inherits the `tk::test_suite` interface.  
+In TestKit, test suites are classes that must inherits the `tk::test_suite` interface. To make it easier, you can declare the class using the `TK_DECLARE_SUITE(suite_name)` macro.  
 `tk::test_suite` provides two virtual pure methods that you must implement:
 
 - `virtual const std::string class_name() const`: simply return the name of the class the test suite is targeting
+	- you can also use the helper macro `TK_SET_TARGET_CLASS("class_name")`
 - `virtual const std::string suite_name() const`: simply return the name of the test suite class
+	- you can also use the helper macro `TK_SET_SUITE_NAME("suite_name")`
 
-The useful — not to say vital — method you will use to add the tests to the suite is `add_test`.  
+The useful — not to say vital — method you will use to add the tests to the suite is `add_test`, or the `TK_ADD_TEST` macro.  
 But we talked too much, let's take a look at our `my_first_test_suite` class:
 
 ```c++
-class my_first_test_suite :
-public tk::test_suite
+TK_DECLARE_SUITE(my_first_test_suite)
 {
 public:
 	my_first_test_suite()
 	{
 		add_test("test_one", test_one);
-		add_test("test_two", test_two);
+		TK_ADD_TEST(test_two);
 	}
 	
-	virtual const std::string
-	class_name() const {
-		return "my_first_class";
-	}
-	
-	virtual const std::string
-	suite_name() const {
-		return "my_first_test_suite";
-	}
+	TK_SET_TARGET_NAME("my_first_class");
+	TK_SET_SUITE_NAME("my_first_test_suite");
 	
 private:
+	// The first way to declare a test in a suite
 	static void
 	test_one()
 	{
 		tk_test_assert(true == false); // this test will intentionally fail
 	}
 	
-	static void
-	test_two()
+	// The other way to declare a test in a suite
+	TK_DECLARE_TEST(test_two)
 	{
 		tk_test_assert(3*3 == 9);
 	}
@@ -136,7 +131,7 @@ A test must be static, can't have parameters nor return a value.
 
 Here's a non exhaustive list of the testing mechanisms TestKit offers:
 
-- `tk_test_assert(expression)`: the test fail is the expression isn't `true`
+- `tk_test_assert(expression)` or `tk_assert(expression)`: the test fail is the expression isn't `true`
 - `tk_test_no_throw(expression)`: ensure an expression doesn't throw any kind of exception
 - `tk_test_throw(expression, exception_name)`: ensure an expression throw a specific kind of exception
 
