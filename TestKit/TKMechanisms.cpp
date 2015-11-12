@@ -55,7 +55,7 @@ tk::test_fail::what() const noexcept
 }
 
 void
-tk::assert(const bool exp, const char* code, const char* file, const std::size_t line)
+tk::test_assert(const bool exp, const char* code, const char* file, const std::size_t line)
 {
 	if (!exp) {
 		std::stringstream ss;
