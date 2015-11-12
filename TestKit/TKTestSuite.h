@@ -42,8 +42,8 @@ public:
 
 testkit_namespace_end
 
-#define TK_DECLARE_SUITE(suite_name) class suite_name : public tk::test_suite
-#define TK_SET_SUITE_NAME(suite_name) virtual const std::string suite_name() const { return suite_name; }
-#define TK_SET_TARGET_CLASS(class_name) virtual const std::string class_name() const { return class_name; }
+#define TK_DECLARE_SUITE(name) class name : public tk::test_suite
+#define TK_SET_SUITE_NAME(name) virtual const std::string suite_name() const { return name; }
+#define TK_SET_TARGET_CLASS(name) virtual const std::string class_name() const { return name; }
 
 #endif
