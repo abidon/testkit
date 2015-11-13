@@ -27,6 +27,7 @@
  test_suite_name
  test_class_name
  test_name
+ test_detail
  test_duration
  test_result (pass=success, error=warning, failure=danger)
  testkit_version
@@ -79,7 +80,7 @@ namespace priv {
 					!!foreach_test\n\
 					<tr>\n\
 						<td>!!test_class_name</td>\n\
-						<td class=\"!!test_result\">!!test_name</td>\n\
+						<td class=\"!!test_result\" title=\"!!test_detail\"><p>!!test_name</p><small>!!test_detail</small></td>\n\
 						<td>!!test_duration</td>\n\
 					</tr>\n\
 					!!end_foreach_test\n\
@@ -105,7 +106,7 @@ namespace priv {
             new Chart(time_spent_ctx).Line({\n\
                 labels: [ !!charts_suites_name ],\n\
                 datasets: [ !!charts_time_spent_dataset ]\n\
-            });\n\
+            }, {scaleOverride: true, scaleSteps: 15, scaleStepWidth: 0.005, scaleStartValue: 0});\n\
         })();\n\
     </script>\n\
 </body>\n\
@@ -178,7 +179,7 @@ tk::html_writer::write(std::ostream &s) const
         {
             double sum = 0;
             for (auto rit(it->second.begin()); rit != it->second.end(); ++rit)
-                sum += rit->ns.count() / 1000000.f;
+                sum += rit->ns.count() / 1000000000.f;
             datasets_data[0].push_back(sum);
             datasets_data[1].push_back(sum / it->second.size());
         }
@@ -286,6 +287,7 @@ tk::html_writer::write(std::ostream &s) const
 					test_html = util::replace("!!test_class_name", test_it->test.clazz, test_html);
 					test_html = util::replace("!!test_name", test_it->test.name, test_html);
 					test_html = util::replace("!!test_result", test_it->passed ? "success" : "danger", test_html);
+                    test_html = util::replace("!!test_detail", test_it->details, test_html);
 					
 					if (test_it->test.with_timer && test_it->passed)
 					{
