@@ -13,3 +13,4 @@ $(TARGET): $(CXXOBJS)
 
 clean:
 	$(RM) TestKit/*.o
+	$(RM) $(TARGET)
