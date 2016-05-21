@@ -7,6 +7,7 @@
 #include <TestKit/TKHtmlWriter.h>
 #include <TestKit/TKTestResults.h>
 
+#include <array>
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
